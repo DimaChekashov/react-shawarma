@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from "../../assets/img/shawarma-logo.svg";
+import Button from '../Button/Button';
 
 function Header() {
     return (
@@ -13,7 +14,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="header__cart">
-                    <a href="/cart.html" className="button button--cart">
+                    <Button className="button--cart">
                         <span>160 ₽</span>
                         <div className="button__delimiter"></div>
                         <svg
@@ -46,7 +47,7 @@ function Header() {
                             />
                         </svg>
                         <span>2</span>
-                    </a>
+                    </Button>
                 </div>
             </div>
         </div>
