@@ -1,0 +1,104 @@
+{
+    "shawarmas": [
+        {
+            "id": 0,
+            "imageUrl": "https://st2.depositphotos.com/3147771/8288/i/950/depositphotos_82886960-stock-photo-beef-shawarma-isolated.jpg",
+            "name": "Пепперони-шаурма",
+            "types": [0, 1],
+            "sizes": ["мал.", "сред.", "бол."],
+            "price": 803,
+            "category": 0,
+            "rating": 4
+        },
+        {
+            "id": 1,
+            "imageUrl": "https://static3.depositphotos.com/1003804/165/i/600/depositphotos_1651150-stock-photo-chicken-twister.jpg",
+            "name": "Сырная-шаурма",
+            "types": [0],
+            "sizes": ["мал.", "бол."],
+            "price": 245,
+            "category": 1,
+            "rating": 6
+        },
+        {
+            "id": 2,
+            "imageUrl": "https://corsica24.ru/upload/iblock/2d8/2d8eb0bb6f130ac29e7ddb0d175051b0.jpg",
+            "name": "Цыпленок-шаурма",
+            "types": [0],
+            "sizes": ["мал.", "бол."],
+            "price": 295,
+            "category": 1,
+            "rating": 4
+        },
+        {
+            "id": 3,
+            "imageUrl": "https://corsica24.ru/upload/iblock/2d8/2d8eb0bb6f130ac29e7ddb0d175051b0.jpg",
+            "name": "Кисло-сладкий-цыпленок-шаурма",
+            "types": [1],
+            "sizes": ["мал.", "сред.", "бол."],
+            "price": 275,
+            "category": 2,
+            "rating": 2
+        },
+        {
+            "id": 4,
+            "imageUrl": "https://www.meme-arsenal.com/memes/6aacb3c653adb9d588d11637f1237b61.jpg",
+            "name": "Чизбургер-шаурма",
+            "types": [0, 1],
+            "sizes": ["мал.", "сред.", "бол."],
+            "price": 415,
+            "category": 3,
+            "rating": 8
+        },
+        {
+            "id": 5,
+            "imageUrl": "https://www.vkusno86.ru/assets/images/products/184/sha.jpg",
+            "name": "Крэйзи-шаурма",
+            "types": [0],
+            "sizes": ["сред.", "бол."],
+            "price": 580,
+            "category": 2,
+            "rating": 2
+        },
+        {
+            "id": 6,
+            "imageUrl": "https://st2.depositphotos.com/3147771/8288/i/600/depositphotos_82886956-stock-photo-beef-shawarma-isolated.jpg",
+            "name": "Пепперони-шаурма",
+            "types": [0, 1],
+            "sizes": ["мал.", "сред.", "бол."],
+            "price": 675,
+            "category": 1,
+            "rating": 9
+        },
+        {
+            "id": 7,
+            "imageUrl": "https://corsica24.ru/upload/iblock/2d8/2d8eb0bb6f130ac29e7ddb0d175051b0.jpg",
+            "name": "Маргарита-шаурма",
+            "types": [0, 1],
+            "sizes": ["мал.", "сред.", "бол."],
+            "price": 450,
+            "category": 4,
+            "rating": 10
+        },
+        {
+            "id": 8,
+            "imageUrl": "https://www.meme-arsenal.com/memes/6aacb3c653adb9d588d11637f1237b61.jpg",
+            "name": "Четыре-сезона-шаурма",
+            "types": [0, 1],
+            "sizes": ["мал.", "сред.", "бол."],
+            "price": 395,
+            "category": 5,
+            "rating": 10
+        },
+        {
+            "id": 9,
+            "imageUrl": "https://free-png.ru/wp-content/uploads/2021/05/free-png.ru-445.png",
+            "name": "Овощная-шаурма",
+            "types": [0, 1],
+            "sizes": ["мал.", "сред.", "бол."],
+            "price": 285,
+            "category": 5,
+            "rating": 7
+        }
+    ]
+}
