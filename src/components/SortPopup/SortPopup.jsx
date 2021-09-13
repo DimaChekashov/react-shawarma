@@ -1,36 +1,36 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from "react";
 
-function SortPopup({items}) {
+const SortPopup = memo(function SortPopup({ items }) {
     const [visiblePopup, setVisiblePopup] = useState(false);
     const [activeItem, setActiveItem] = useState(0);
     const sortRef = useRef();
     const activeLabel = items[activeItem].name;
 
     const toggleVisiblePopup = () => {
-        setVisiblePopup(!visiblePopup)
-    }
+        setVisiblePopup(!visiblePopup);
+    };
 
     const handleOutsideClick = (e) => {
-        if(!e.path.includes(sortRef.current)) {
+        if (!e.path.includes(sortRef.current)) {
             setVisiblePopup(false);
         }
-    }
+    };
 
     useEffect(() => {
-        document.body.addEventListener('click', handleOutsideClick);
+        document.body.addEventListener("click", handleOutsideClick);
     }, []);
 
     const onSelectItem = (index) => {
-        setActiveItem(index)
+        setActiveItem(index);
         setVisiblePopup(false);
-    }
+    };
 
     return (
         <>
             <div ref={sortRef} className="sort">
                 <div className="sort__label">
                     <svg
-                        className={visiblePopup ? 'rotated': ''}
+                        className={visiblePopup ? "rotated" : ""}
                         width="10"
                         height="6"
                         viewBox="0 0 10 6"
@@ -45,16 +45,27 @@ function SortPopup({items}) {
                     <b>Сортировка по:</b>
                     <span onClick={toggleVisiblePopup}>{activeLabel}</span>
                 </div>
-                {visiblePopup && 
+                {visiblePopup && (
                     <div className="sort__popup">
                         <ul>
-                            {items && items.map((obj, index) => <li className={activeItem === index ? 'active': ''} onClick={() => onSelectItem(index)} key={`${obj.type}_${index}`}>{obj.name}</li>)}
+                            {items &&
+                                items.map((obj, index) => (
+                                    <li
+                                        className={
+                                            activeItem === index ? "active" : ""
+                                        }
+                                        onClick={() => onSelectItem(index)}
+                                        key={`${obj.type}_${index}`}
+                                    >
+                                        {obj.name}
+                                    </li>
+                                ))}
                         </ul>
                     </div>
-                }
+                )}
             </div>
         </>
-    )
-}
+    );
+});
 
 export default SortPopup;
