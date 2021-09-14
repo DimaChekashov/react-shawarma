@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## JSON Server
 
-### `npm run server
+### `npm run server`
 
 ## Available Scripts
 

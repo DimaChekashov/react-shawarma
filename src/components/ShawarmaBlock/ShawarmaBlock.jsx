@@ -1,54 +1,59 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 
-function ShawarmaBlock({name, imageUrl, price, types, sizes}) {
-    const availableTypes = ['обычная', 'острая'];
-    const availableSizes = ['мал.', 'сред.', 'бол.'];
+function ShawarmaBlock({ name, imageUrl, price, types, sizes }) {
+    const availableTypes = ["обычная", "острая"];
+    const availableSizes = ["мал.", "сред.", "бол."];
     const [activeType, setActiveType] = useState(types[0]);
     const [activeSize, setActiveSize] = useState(sizes[0]);
 
     const onSelectType = (index) => {
         setActiveType(index);
-    }
+    };
 
     const onSelectSize = (index) => {
         setActiveSize(index);
-    }
+    };
 
     return (
         <div className="shawarma-block">
             <div className="shawarma-block__image">
-                <img
-                    src={imageUrl}
-                    alt={name}
-                />
+                <img src={imageUrl} alt={name} />
             </div>
-            <h4 className="shawarma-block__title">
-                {name}
-            </h4>
+            <h4 className="shawarma-block__title">{name}</h4>
             <div className="shawarma-block__selector">
                 <ul>
                     {availableTypes.map((type, index) => (
-                        <li key={type} onClick={() => onSelectType(index)} className={classNames({
-                            'active': activeType === index,
-                            'disabled': !types.includes(index),
-                        })}>{type}</li>
+                        <li
+                            key={type}
+                            onClick={() => onSelectType(index)}
+                            className={classNames({
+                                active: activeType === index,
+                                disabled: !types.includes(index),
+                            })}
+                        >
+                            {type}
+                        </li>
                     ))}
                 </ul>
                 <ul>
                     {availableSizes.map((size, index) => (
-                        <li key={size} onClick={() => onSelectSize(index)} className={classNames({
-                            'active': activeSize === index,
-                            'disabled': !sizes.includes(size),
-                        })}>{size}</li>
+                        <li
+                            key={size}
+                            onClick={() => onSelectSize(index)}
+                            className={classNames({
+                                active: activeSize === index,
+                                disabled: !sizes.includes(size),
+                            })}
+                        >
+                            {size}
+                        </li>
                     ))}
                 </ul>
             </div>
             <div className="shawarma-block__bottom">
-                <div className="shawarma-block__price">
-                    от {price} ₽
-                </div>
+                <div className="shawarma-block__price">от {price} ₽</div>
                 <div className="button button--outline button--add">
                     <svg
                         width="12"
@@ -67,7 +72,7 @@ function ShawarmaBlock({name, imageUrl, price, types, sizes}) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 ShawarmaBlock.propTypes = {
@@ -75,15 +80,16 @@ ShawarmaBlock.propTypes = {
     imageUrl: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     types: PropTypes.arrayOf(PropTypes.number),
-    sizes: PropTypes.arrayOf(PropTypes.string)
+    sizes: PropTypes.arrayOf(PropTypes.string),
 };
 
 ShawarmaBlock.defaultProps = {
-    name: '---',
-    imageUrl: 'https://corsica24.ru/upload/iblock/2d8/2d8eb0bb6f130ac29e7ddb0d175051b0.jpg',
+    name: "---",
+    imageUrl:
+        "https://corsica24.ru/upload/iblock/2d8/2d8eb0bb6f130ac29e7ddb0d175051b0.jpg",
     price: 0,
     types: [],
-    sizes: []
+    sizes: [],
 };
 
 export default ShawarmaBlock;

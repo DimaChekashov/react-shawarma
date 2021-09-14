@@ -4,14 +4,21 @@ const initialState = {
 };
 
 const shawarmas = (state = initialState, action) => {
-    if (action.type === "SET_SHAWARMAS") {
-        return {
-            ...state,
-            items: action.payload,
-            isLoaded: true,
-        };
+    switch (action.type) {
+        case "SET_SHAWARMAS":
+            return {
+                ...state,
+                items: action.payload,
+                isLoaded: true,
+            };
+        case "SET_LOADED":
+            return {
+                ...state,
+                isLoaded: action.payload,
+            };
+        default:
+            return state;
     }
-    return state;
 };
 
 export default shawarmas;
