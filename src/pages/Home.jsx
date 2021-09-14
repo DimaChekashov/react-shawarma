@@ -1,7 +1,8 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { Categories, SortPopup, ShawarmaBlock } from "../components";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory } from "../redux/actions/filters";
+import { fetchShawarmas } from "../redux/actions/shawarmas";
 
 const categoryNames = [
     "Мясные",
@@ -14,6 +15,12 @@ const categoryNames = [
 function Home() {
     const dispatch = useDispatch();
     const items = useSelector(({ shawarmas }) => shawarmas.items);
+
+    useEffect(() => {
+        if (!items.length) {
+            dispatch(fetchShawarmas());
+        }
+    }, []);
 
     const onSelectCategory = useCallback((index) => {
         dispatch(setCategory(index));
