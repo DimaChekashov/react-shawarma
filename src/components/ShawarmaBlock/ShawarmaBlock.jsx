@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Button from "../Button/Button";
 
-function ShawarmaBlock({ name, imageUrl, price, types, sizes }) {
+function ShawarmaBlock({
+    id,
+    name,
+    imageUrl,
+    price,
+    types,
+    sizes,
+    onClickAddShawarma,
+    addedCount,
+}) {
     const availableTypes = ["обычная", "острая"];
     const availableSizes = ["мал.", "сред.", "бол."];
     const [activeType, setActiveType] = useState(types[0]);
-    const [activeSize, setActiveSize] = useState(sizes[0]);
+    const [activeSize, setActiveSize] = useState(0);
 
     const onSelectType = (index) => {
         setActiveType(index);
@@ -14,6 +24,18 @@ function ShawarmaBlock({ name, imageUrl, price, types, sizes }) {
 
     const onSelectSize = (index) => {
         setActiveSize(index);
+    };
+
+    const onAddShawarma = () => {
+        const obj = {
+            id,
+            name,
+            imageUrl,
+            price,
+            size: availableSizes[activeSize],
+            type: availableTypes[activeType],
+        };
+        onClickAddShawarma(obj);
     };
 
     return (
@@ -54,7 +76,7 @@ function ShawarmaBlock({ name, imageUrl, price, types, sizes }) {
             </div>
             <div className="shawarma-block__bottom">
                 <div className="shawarma-block__price">от {price} ₽</div>
-                <div className="button button--outline button--add">
+                <Button onClick={onAddShawarma} className="button--add" outline>
                     <svg
                         width="12"
                         height="12"
@@ -68,8 +90,8 @@ function ShawarmaBlock({ name, imageUrl, price, types, sizes }) {
                         />
                     </svg>
                     <span>Добавить</span>
-                    <i>2</i>
-                </div>
+                    {addedCount && <i>{addedCount}</i>}
+                </Button>
             </div>
         </div>
     );
@@ -81,6 +103,8 @@ ShawarmaBlock.propTypes = {
     price: PropTypes.number.isRequired,
     types: PropTypes.arrayOf(PropTypes.number),
     sizes: PropTypes.arrayOf(PropTypes.string),
+    onAddShawarma: PropTypes.func,
+    addedCount: PropTypes.number,
 };
 
 ShawarmaBlock.defaultProps = {

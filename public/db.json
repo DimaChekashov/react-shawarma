@@ -42,7 +42,7 @@
         },
         {
             "id": 4,
-            "imageUrl": "https://www.meme-arsenal.com/memes/6aacb3c653adb9d588d11637f1237b61.jpg",
+            "imageUrl": "https://st2.depositphotos.com/3147771/8288/i/600/depositphotos_82886956-stock-photo-beef-shawarma-isolated.jpg",
             "name": "Чизбургер-шаурма",
             "types": [0, 1],
             "sizes": ["мал.", "сред.", "бол."],
@@ -52,7 +52,7 @@
         },
         {
             "id": 5,
-            "imageUrl": "https://www.vkusno86.ru/assets/images/products/184/sha.jpg",
+            "imageUrl": "https://st4.depositphotos.com/11537288/26836/i/950/depositphotos_268365376-stock-photo-shawarma-with-lettuce-isolated-on.jpg",
             "name": "Крэйзи-шаурма",
             "types": [0],
             "sizes": ["сред.", "бол."],
@@ -82,7 +82,7 @@
         },
         {
             "id": 8,
-            "imageUrl": "https://www.meme-arsenal.com/memes/6aacb3c653adb9d588d11637f1237b61.jpg",
+            "imageUrl": "https://corsica24.ru/upload/iblock/fe1/fe121462f72c964a1d6d7b238a29f6d6.jpeg",
             "name": "Четыре-сезона-шаурма",
             "types": [0, 1],
             "sizes": ["мал.", "сред.", "бол."],

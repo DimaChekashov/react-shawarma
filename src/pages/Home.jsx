@@ -8,6 +8,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory, setSortBy } from "../redux/actions/filters";
 import { fetchShawarmas } from "../redux/actions/shawarmas";
+import { addShawarmaToCart } from "../redux/actions/cart";
 
 const categoryNames = [
     "Мясные",
@@ -26,6 +27,7 @@ const sortIems = [
 function Home() {
     const dispatch = useDispatch();
     const items = useSelector(({ shawarmas }) => shawarmas.items);
+    const cartItems = useSelector(({ cart }) => cart.items);
     const isLoaded = useSelector(({ shawarmas }) => shawarmas.isLoaded);
     const { category, sortBy } = useSelector(({ filters }) => filters);
 
@@ -40,6 +42,10 @@ function Home() {
     const onSelectSortType = useCallback((type) => {
         dispatch(setSortBy(type));
     }, []);
+
+    const handleAddShawarmaToCart = (obj) => {
+        dispatch({ type: "ADD_SHAWARMA_CART", payload: obj });
+    };
 
     return (
         <div className="container">
@@ -60,8 +66,12 @@ function Home() {
                 {isLoaded
                     ? items.map((item) => (
                           <ShawarmaBlock
+                              onClickAddShawarma={handleAddShawarmaToCart}
                               key={item.id}
-                              isLoading={true}
+                              addedCount={
+                                  cartItems[item.id] &&
+                                  cartItems[item.id].length
+                              }
                               {...item}
                           />
                       ))
