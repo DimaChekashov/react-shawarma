@@ -70,7 +70,7 @@ function Home() {
                               key={item.id}
                               addedCount={
                                   cartItems[item.id] &&
-                                  cartItems[item.id].length
+                                  cartItems[item.id].items.length
                               }
                               {...item}
                           />

@@ -12,7 +12,7 @@ export const fetchShawarmas = (sortBy, category) => (dispatch) => {
     });
     axios
         .get(
-            `http://localhost:3001/shawarmas?${
+            `/shawarmas?${
                 category !== null ? `category=${category}` : ""
             }&_sort=${sortBy.type}&_order=${sortBy.order}`
         )
